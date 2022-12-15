@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="\" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>AnLoMinus - Calculator</title>
+  <!--
+  AnLoMinus - Calculator
+  Date Created: 15/12/2022
+-->
+  <style>
+    body{
+      text-align: center;
+      background-color: olive;
+
+    }
+    #main{
+      width: 300px;
+      height: 280px;
+      background-color: black;
+    }
+    input{
+      width: 20%;
+      height: 40px;
+      font-size: 20px;
+      margin:  6px;
+
+    }
+
+    #abcd{
+      width: 93%;
+      height: 50px;
+      background-color: silver;
+
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>AnLoMinus - Calculator</h1>
+  <div id="main">
+    <form name="Calculator">
+      <input type="text" name="typehere" placeholder="0" id="abcd"> <br>
+      <input type="button" value="1" onclick="Calculator.typehere.value+=1">
+      <input type="button" value="2" onclick="Calculator.typehere.value+=2">
+      <input type="button" value="3" onclick="Calculator.typehere.value+=3">
+      <input type="button" value="+" onclick="add()">
+      <br>
+      <input type="button" value="4" onclick="Calculator.typehere.value+=4">
+      <input type="button" value="5" onclick="Calculator.typehere.value+=5">
+      <input type="button" value="6" onclick="Calculator.typehere.value+=6">
+      <input type="button" value="-" onclick="sub()">
+      <br>
+      <input type="button" value="7" onclick="Calculator.typehere.value+=7">
+      <input type="button" value="8" onclick="Calculator.typehere.value+=8">
+      <input type="button" value="9" onclick="Calculator.typehere.value+=9">
+      <input type="button" value="/" onclick="di()">
+      <br>
+      <input type="button" value="C" onclick="Calculator.typehere.value=''">
+      <input type="button" value="0" onclick="Calculator.typehere.value+=0">
+      <input type="button" value="=" onclick="Calculator.typehere.value=eval(Calculator.typehere.value)">
+      <input type="button" value="X" onclick="mul()">
+      <br>
+    </form>
+  </div>
+  <script type="text/javascript">
+    function add() {
+      var act = 0,
+        b = 0;
+      act = Calculator.typehere.value;
+      b = act.charAt(act.length - 1)
+      if (b == '+' || b == '-' || b == '/' || b == '*') {
+        Calculator.typehere.value = act.substring(0, act.length - 1);
+        Calculator.typehere.value += '+';
+      } else {
+        Calculator.typehere.value += '+';
+
+      }
+    }
+
+    function sub() {
+      var act = 0,
+        b = 0;
+      act = Calculator.typehere.value;
+      b = act.charAt(act.length - 1)
+      if (b == '+' || b == '-' || b == '/' || b == '*') {
+        Calculator.typehere.value = act.substring(0, act.length - 1);
+        Calculator.typehere.value += '-';
+      } else {
+        Calculator.typehere.value += '-';
+
+      }
+    }
+
+    function di() {
+      var act = 0,
+        b = 0;
+      act = Calculator.typehere.value;
+      b = act.charAt(act.length - 1)
+      if (b == '+' || b == '-' || b == '/' || b == '*') {
+        Calculator.typehere.value = act.substring(0, act.length - 1);
+        Calculator.typehere.value += '/';
+      } else {
+        Calculator.typehere.value += '/';
+
+      }
+    }
+
+    function mul() {
+      var act = 0,
+        b = 0;
+      act = Calculator.typehere.value;
+      b = act.charAt(act.length - 1)
+      if (b == '+' || b == '-' || b == '/' || b == '*') {
+        Calculator.typehere.value = act.substring(0, act.length - 1);
+        Calculator.typehere.value += '*';
+      } else {
+        Calculator.typehere.value += '*';
+
+      }
+    }
+
+  </script>
+</body>
+
+</html>
